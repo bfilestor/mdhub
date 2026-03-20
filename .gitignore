@@ -35,6 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 target/
+app/go-api/bin/*
 doc/
 产品功能开发说明书.md
 产品需求说明书.md

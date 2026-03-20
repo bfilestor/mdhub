@@ -1,0 +1,19 @@
+[Unit]
+Description=mdhub nextjs-admin service
+After=network-online.target mdhub-api.service
+Wants=network-online.target mdhub-api.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/mdhub
+Environment=NODE_ENV=production
+ExecStart=/opt/mdhub/scripts/start-admin.sh
+Restart=always
+RestartSec=3
+TimeoutStartSec=60
+TimeoutStopSec=20
+KillSignal=SIGINT
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
